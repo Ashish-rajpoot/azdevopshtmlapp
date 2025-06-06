@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: azdevopsapp-config
+  namespace: namespace-workflow-1749189235030
+  labels:
+    app.kubernetes.io/name: azdevopsapp
+    kubernetes.azure.com/generator: devhub
+data:
