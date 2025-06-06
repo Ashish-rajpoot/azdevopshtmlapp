@@ -1,15 +1,15 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: azdevopsapp
-  namespace: namespace-workflow-1749189235030
+  name: aasa
+  namespace: namespace-workflow-1749189577977
   labels:
-    app.kubernetes.io/name: azdevopsapp
+    app.kubernetes.io/name: aasa
     kubernetes.azure.com/generator: devhub
 spec:
   type: LoadBalancer
   selector:
-    app.kubernetes.io/name: azdevopsapp
+    app.kubernetes.io/name: aasa
   ports:
     - protocol: TCP
       port: 5000
