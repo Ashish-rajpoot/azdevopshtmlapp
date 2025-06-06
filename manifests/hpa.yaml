@@ -1,16 +1,16 @@
 apiVersion: autoscaling/v2
 kind: HorizontalPodAutoscaler
 metadata:
-  name: azdevopsapp
+  name: aasa
   labels:
-    app.kubernetes.io/name: azdevopsapp
-    app.kubernetes.io/part-of: azdevopsapp-project
+    app.kubernetes.io/name: aasa
+    app.kubernetes.io/part-of: aasa-project
     kubernetes.azure.com/generator: devhub
 spec:
   scaleTargetRef:
     apiVersion: apps/v1
     kind: Deployment
-    name: azdevopsapp
+    name: aasa
   minReplicas: 1
   maxReplicas: 5
   metrics:
