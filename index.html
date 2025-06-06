@@ -1,0 +1,74 @@
+<html>
+  <head>
+    <title>index page</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      .body {
+        text-align: center;
+        padding-top: 50px;
+        background-size: cover;
+        background-position: center;
+        transition: background-image 0.5s ease-in-out;
+      }
+
+      #imageInput {
+        margin-top: 20px;
+      }
+    </style>
+  </head>
+  <body class="body">
+    <h1>
+      Welcome <span>Mrs.<span id="sneha">Sneha</span></span>
+    </h1>
+    <h1 id="time"></h1>
+
+    <!-- File input for background image -->
+    <input type="file" id="imageInput" accept="image/*" />
+
+    <script>
+      // Time update
+      const time = document.getElementById("time");
+      setInterval(() => {
+        let newDate = new Date().toLocaleString();
+        time.innerHTML = newDate;
+      }, 1000);
+
+      // Background image update
+      const imageInput = document.getElementById("imageInput");
+      imageInput.addEventListener("change", (event) => {
+        const file = event.target.files[0];
+        if (file && file.type.startsWith("image/")) {
+          const reader = new FileReader();
+          reader.onload = function (e) {
+            document.body.style.backgroundImage = `url('${e.target.result}')`;
+          };
+          reader.readAsDataURL(file);
+        } else {
+          alert("Please select a valid image file.");
+        }
+      });
+    </script>
+  </body>
+</html>
+
+<!-- <html>
+  <head>
+    <title>index page</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="body">
+    <h1>
+      Welcome <span>Mrs.<span id="sneha">Sneha</span></span>
+    </h1>
+    <h1 id="time"></h1>
+
+    <script lang="javascript">
+      const time = document.getElementById("time");
+      setInterval(()=>{
+                let newDate = new Date().toLocaleString();
+                time.innerHTML=newDate
+
+            },1000)
+    </script>
+  </body>
+</html> -->
